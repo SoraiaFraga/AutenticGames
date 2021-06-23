@@ -108,3 +108,33 @@ function updateCartTotal(){
     }
     document.getElementsByClassName('cart-total-price')[0].innerText = total + '€'
 }
+/////////////////////////////////////////LOGIN
+function validateEmail() {
+  var emailID = document.myForm.EMail.value;
+  atpos = emailID.indexOf("@");
+  dotpos = emailID.lastIndexOf(".");
+
+  if (atpos < 1 || dotpos - atpos < 2) {
+    alert("please enter correct email id");
+    document.formLogin.EMail.focus();
+    return false;
+  }
+  alert("correct email id");
+  return true;
+
+  if (document.formLogin.EMail.value == "") {
+    alert("please enter correct email id");
+    document.formLogin.EMail.focus();
+    return false;
+  }
+}
+
+function verificarSenhas() {
+  if (
+    document.formLogin.password1.value == document.formLogin.password2.value
+  ) {
+    alert("As duas senhas conferem");
+  } else {
+    alert("As duas senhas não conferem");
+  }
+}
